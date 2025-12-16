@@ -1,0 +1,25 @@
+services:
+  app:
+    build: ./front
+    volumes:
+      - ./front:/front
+    ports:
+      - 3000:3000
+  api:
+    build: ./back
+    volumes:
+      - ./back:/back
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: mysql:8.4
+    volumes:
+      - ./back/mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: dev
+    ports:
+      - 3306:3306
+
