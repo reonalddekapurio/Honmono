@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function newspaper(){
         return $this->hasMany(Newspaper::class);
     }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function like(){
+        return $this->hasMany(Like::class);
+    }
 }
