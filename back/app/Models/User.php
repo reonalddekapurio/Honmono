@@ -21,6 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'icon_url'
         'password',
     ];
 
@@ -45,5 +46,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function newspaper(){
+        return $this->hasMany(Newspaper::class);
     }
 }
