@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class AccountController extends Controller
 {
@@ -21,10 +22,8 @@ class AccountController extends Controller
                 'email' => $validated['email'],
                 'password' => bcrypt($validated['password']),
                 'name' => $validated['name'],
-                'icon_url' => null,
             ]);
 
-            $user->tokens()->delete();
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return response()->json([
@@ -37,13 +36,21 @@ class AccountController extends Controller
                     'created_at' => $user->created_at->toISOString(),
                 ],
             ], 201);
-        } catch (Throwable $e) {
+
+        } catch (ValidationException $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->errors(),
+            ], 422);
+
+        } catch (\Throwable $e) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Internal server error',
             ], 500);
         }
     }
+
     public function login(Request $request)
     {
         try {
@@ -74,7 +81,13 @@ class AccountController extends Controller
                 ],
             ]);
 
-        } catch (Throwable $e) {
+        } catch (ValidationException $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->errors(),
+            ], 422);
+
+        } catch (\Throwable $e) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Internal server error',

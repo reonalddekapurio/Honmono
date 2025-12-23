@@ -48,15 +48,15 @@ class User extends Authenticatable
         ];
     }
 
-    public function newspaper(){
+    public function newspapers(){
         return $this->hasMany(Newspaper::class);
     }
 
-    public function comment(){
+    public function comments(){
         return $this->hasMany(Comment::class);
     }
 
-    public function like(){
+    public function likes(){
         return $this->hasMany(Like::class);
     }
 }

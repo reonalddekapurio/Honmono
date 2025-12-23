@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 Route::post('/account', [AccountController::class, 'store']);
 Route::post('/account/login', [AccountController::class, 'login']);
+Route::patch('account/me', [AccountController::class, 'updateMe']);
