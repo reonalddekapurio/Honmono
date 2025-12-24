@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+// use Illuminate\Support\Facades\Auth; 
 
 class AccountController extends Controller
 {
@@ -94,4 +95,60 @@ class AccountController extends Controller
             ], 500);
         }
     }
+
+    public function updateMe(Request $request)
+{
+    try {
+        $validated = $request->validate([
+            'email' => 'nullable|email',
+            'name' => 'nullable|string|max:50',
+            'icon_url' => 'nullable|string',
+        ]);
+
+        $user = User::first();
+
+        if (!$user) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'User not found',
+            ], 404);
+        }
+
+        if (!is_null($validated['email'] ?? null)) {
+            $user->email = $validated['email'];
+        }
+
+        if (!is_null($validated['name'] ?? null)) {
+            $user->name = $validated['name'];
+        }
+
+        if (!is_null($validated['icon_url'] ?? null)) {
+            $user->icon_url = $validated['icon_url'];
+        }
+
+        $user->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'プロフィールの更新ができました',
+            'data' => [
+                'user_id' => $user->id,
+                'email' => $user->email,
+                'name' => $user->name,
+                'icon_url' => $user->icon_url,
+            ],
+        ], 200);
+    } catch (ValidationException $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->errors(),
+        ], 422);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Internal server error',
+        ], 500);
+    }
+}
+
 }
