@@ -96,16 +96,15 @@ class AccountController extends Controller
         }
     }
 
-    public function updateMe(Request $request)
-{
+    public function updateMe(Request $request) {
     try {
         $validated = $request->validate([
-            'email' => 'nullable|email',
+            'email' => 'nullable|email|unique:users,email,' . $user->id,
             'name' => 'nullable|string|max:50',
-            'icon_url' => 'nullable|string',
+            'icon_url' => 'nullable|string|url',
         ]);
 
-        $user = User::first();
+        $user = $request->user();
 
         if (!$user) {
             return response()->json([
@@ -114,19 +113,32 @@ class AccountController extends Controller
             ], 404);
         }
 
-        if (!is_null($validated['email'] ?? null)) {
+        if (isset($validated['email'])) {
             $user->email = $validated['email'];
         }
 
-        if (!is_null($validated['name'] ?? null)) {
+        if (isset($validated['name'])) {
             $user->name = $validated['name'];
         }
 
-        if (!is_null($validated['icon_url'] ?? null)) {
+        if (isset($validated['icon_url'])) {
             $user->icon_url = $validated['icon_url'];
         }
 
-        $user->save();
+        $hasUpdate = false;
+        foreach (['email', 'name', 'icon_url'] as $field) {
+            if (isset($validated[$field])) {
+                $user->$field = $validated[$field];
+                $hasUpdate = true;
+            }
+        }
+
+        if (!$hasUpdate) {
+            return response()->json([
+                'status' => 'error',
+                'message' => '更新するフィールドがありません',
+            ], 422);
+        }
 
         return response()->json([
             'status' => 'success',
