@@ -14,7 +14,7 @@ class Image extends Model
         'url',
     ];
 
-    public function newspaper(){
+    public function newspapers() {
         return $this->belongsTo(Newspaper::class);
     }
 }

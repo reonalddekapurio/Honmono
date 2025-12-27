@@ -14,11 +14,11 @@ class Like extends Model
         'newspaper_id',
     ];
 
-    public function user(){
+    public function user() {
         return $this->belongsTo(User::class);
     }
 
-    public function newspaper(){
+    public function newspapers() {
         return $this->belongsTo(Newspaper::class);
     }
 }
