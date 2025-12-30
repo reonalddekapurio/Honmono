@@ -17,7 +17,7 @@ class CommentController extends Controller
 
     // ニュースにコメントを返信
     public function store(Request $request, Newspaper $newspaper) {
-        $user = 1;
+        $user = Auth::id();
 
         $comment = $request->validate([
             'contents' => 'required|string|max:120',
