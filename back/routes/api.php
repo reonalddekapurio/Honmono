@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::prefix('news')->group(function() {
-    Route::get('/ranking', [NewspaperController::class, 'ranking']);
     Route::post('/{newspaper_id}/comments',[CommentController::class, 'store']);
+    Route::get('/ranking', [NewspaperController::class, 'ranking']);
+    Route::get('/topics', [NewspaperController::class, 'topics']);
 });
