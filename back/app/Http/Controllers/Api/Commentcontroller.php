@@ -31,13 +31,13 @@ class CommentController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'date' => [
+            'data' => [
                 'id' => $comment->id,
                 'user_id' => $comment->user_id,
                 'news_id' => $comment->newspaper_id,
                 'contents' => $comment->contents,
                 'icon_url' => $comment->user->icon_url ?? null,
-                'created_at' => $comment->created_at->toISOString(),
+                'created_at' => $comment->created_at->toIso8601String(),
             ]
             ], 201);
     }

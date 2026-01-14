@@ -75,7 +75,7 @@ class NewspaperController extends Controller
                 'likes_count' => $newspaper->likes_count,
                 'comments_count' => $newspaper->comments_count,
                 'is_liked' => (bool)$newspaper->is_liked,
-                'created_at' => $newspaper->created_at->toIso8601String(), // ISO8601形式
+                'created_at' => $newspaper->created_at->toIso8601String(),
             ];
         });
 
