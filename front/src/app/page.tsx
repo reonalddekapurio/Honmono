@@ -1,7 +1,9 @@
+import { BottomNav } from "@/components/layouts/BottomNav";
+
 export default function Home() {
   return (
     <div className="">
-      <h1>Home</h1>
+      <BottomNav />
     </div>
   );
 }
