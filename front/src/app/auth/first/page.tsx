@@ -13,7 +13,7 @@ export default function First() {
             className="mb-30"
             />
             <div className="flex flex-col gap-4">
-            <AuthButton label="ログイン" link="/login" />
+            <AuthButton label="ログイン" link="/auth/login" />
             <p className="text-gray text-center text-xs">または</p>
             <AuthButton label="新規登録" link="/register" />
             </div>
