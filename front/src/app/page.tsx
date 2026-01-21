@@ -1,6 +1,5 @@
 import { BottomNav } from "@/components/layouts/BottomNav";
 import { NewspaperCard } from "@/components/layouts/NewspaperCard";
-import { ProfileNewspaperCard } from "@/components/layouts/ProfileNewspaperCard";
 
 export default function Home() {
   const mockData = [
