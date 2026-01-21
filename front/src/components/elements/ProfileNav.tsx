@@ -13,7 +13,7 @@ export function ProfileNav() {
             newspaper: {
                 id: 1,
                 title: "朝刊",
-                description: "今日の主要なニュース",
+                description: "今日の主要なニュース速報。国内外の最新情報を早朝からお伝えします。政治経済から文化スポーツまで幅広くカバー。",
                 images: "/img/sample1.jpg",
                 likes: 120,
                 is_liked: false
@@ -28,7 +28,7 @@ export function ProfileNav() {
             newspaper: {
                 id: 2,
                 title: "夕刊",
-                description: "夕方のニュース",
+                description: "夕方のニュース特集版。午前から午後にかけての重要なニュースをまとめてお届けします。読者の皆様に最新情報をお伝えするのが使命です。",
                 images: "/img/sample2.jpg",
                 likes: 85,
                 is_liked: false
@@ -43,7 +43,7 @@ export function ProfileNav() {
             newspaper: {
                 id: 3,
                 title: "号外",
-                description: "速報ニュース",
+                description: "速報ニュース。突発的な重要ニュースが発生した際に配信される特別版です。社会に大きな影響を与える情報をいち早くキャッチしてお知らせします。",
                 images: "/img/sample3.jpg",
                 likes: 200,
                 is_liked: false
@@ -68,14 +68,14 @@ export function ProfileNav() {
             </div>
             <div className="p-4">
                 {activeTab === "menu" && (
-                    <div className="flex flex-wrap gap-5 justify-center">
+                    <div className="flex flex-wrap gap-4 justify-center">
                         {mockNewspapers.map((item) => (
                             <ProfileNewspaperCard key={item.newspaper.id} newspaper={item.newspaper} user={item.user} />
                         ))}
                     </div>
                 )}
                 {activeTab === "heart" && (
-                    <div className="flex flex-wrap gap-5 justify-center">
+                    <div className="flex flex-wrap gap-4 justify-center">
                         {mockNewspapers.slice(0, 2).map((item) => (
                             <ProfileNewspaperCard key={item.newspaper.id} newspaper={item.newspaper} user={item.user} />
                         ))}
