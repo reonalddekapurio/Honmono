@@ -1,5 +1,6 @@
 import { BottomNav } from "@/components/layouts/BottomNav";
 import { NewspaperCard } from "@/components/layouts/NewspaperCard";
+import { ProfileNewspaperCard } from "@/components/layouts/ProfileNewspaperCard";
 
 export default function Home() {
   const mockData = [
@@ -24,7 +25,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center pb-20">
       {mockData.map((data) => (
-        <NewspaperCard key={data.id} newspaper={data.newspaper} user={data.user} />
+        <ProfileNewspaperCard key={data.id} newspaper={data.newspaper} user={data.user} />
       ))}
       <BottomNav />
     </div>
