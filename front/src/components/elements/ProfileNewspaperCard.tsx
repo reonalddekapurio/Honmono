@@ -19,7 +19,7 @@ export function ProfileNewspaperCard({ newspaper, user }: NewspaperCardProps) {
         : newspaper.description;
     
     return (
-        <div className="relative flex flex-col align-start justify-center w-[150px] h-[190px] gap-2 bg-[url('/img/newspaper2.svg')] bg-no-repeat bg-center bg-cover shadow-2xl p-3">
+        <div className="relative flex flex-col align-start justify-center w-[150px] h-[190px] gap-2 bg-[url('/img/newspaper2.svg')] bg-no-repeat bg-center bg-cover shadow-md p-3">
             <div className="flex flex-col align-start justify-center w-full overflow-hidden">
                 <Image 
                     src={newspaper.images} 
