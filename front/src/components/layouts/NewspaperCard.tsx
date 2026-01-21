@@ -40,7 +40,7 @@ export function NewspaperCard({ newspaper, user }: NewspaperCardProps) {
                     </Link>
                 )}
             </div>
-            <div className="absolute bottom-4 right-9 flex items-center justify-center w-6 h-6 rounded-full overflow-hidden">
+            <div className="absolute bottom-4 right-4 flex items-center justify-center w-6 h-6 rounded-full overflow-hidden">
                 <Image 
                 src={user.icon_url} 
                 alt="user-icon"
