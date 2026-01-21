@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {Menu,Heart} from "lucide-react"
-import { ProfileNewspaperCard } from "../layouts/ProfileNewspaperCard";
+import { ProfileNewspaperCard } from "./ProfileNewspaperCard";
 import { Newspaper, User } from "@/types/newspaper";
 
 export function ProfileNav() {
