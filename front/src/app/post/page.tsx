@@ -8,7 +8,7 @@ import { ButtonWithBgImage } from "@/components/layouts";
 
 export default function Post() {
   const router = useRouter();
-  const [templateNum, setTemplateNum] = useState<number>(1); // 初期値: 1
+  const [templateNum, setTemplateNum] = useState<1 | 2>(1); // 初期値: 1
 
   return (
     <main>
@@ -29,7 +29,7 @@ export default function Post() {
           </h1>
             <div className="flex justify-between w-full mt-3 mb-7">
               {[...Array(2)].map((_, i) => {
-                const index = i + 1;
+                const index = i + 1 as 1 | 2;
                 const isActive = index === templateNum;
 
                 return (
