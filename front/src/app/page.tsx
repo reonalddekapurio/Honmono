@@ -26,7 +26,6 @@ export default function Home() {
       {mockData.map((data) => (
         <NewspaperCard key={data.id} newspaper={data.newspaper} user={data.user} />
       ))}
-      <BottomNav />
     </div>
   );
 }
