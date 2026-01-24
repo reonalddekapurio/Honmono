@@ -5,7 +5,7 @@ import { ProfileNav } from "../elements/ProfileNav";
 
 export function ProfileUi() {
     return (
-        <div className="flex flex-col w-[353px] h-auto bg-[url('/img/newspaper.svg')] bg-center bg-no-repeat bg-cover">
+        <div className="flex flex-col w-[353px] h-auto bg-[url('/img/news-paper/news-paper-type1.svg')] bg-center bg-no-repeat bg-cover">
             <div className="flex flex-col items-center justify-center mb-8 mt-6 gap-2">
                 <div className="w-[100px] h-[100px] overflow-hidden rounded-full">
                     <Image 
