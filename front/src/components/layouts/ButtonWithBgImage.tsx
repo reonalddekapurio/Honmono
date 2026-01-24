@@ -18,10 +18,12 @@ export function ButtonWithBgImage({
         src="/img/tag/tag-red.svg"
         alt=""
         fill
-        className="absolute object-cover -z-50"
+        className="absolute object-cover"
         priority
       />
-      {children}
+      <span className="relative z-10">
+        {children}
+      </span>
     </button>
   )
 }
