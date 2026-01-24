@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'icon_url', // コンマなかったです。
+        'icon_url',
         'password',
     ];
 
@@ -58,5 +58,19 @@ class User extends Authenticatable
 
     public function likes(){
         return $this->hasMany(Like::class);
+    }
+
+    public function getIconUrlAttribute($value): ?string
+    {
+        if ($value) {
+            if ($value == 'default_icon' || $value == 'assets/images/default_icon.jpeg') {
+                return url('/assets/images/default_icon.jpeg');
+            }
+            if (preg_match('/^https?:\/\//', $value) || str_starts_with($value, '/api/storage/') || str_starts_with($value, 'api/storage/')) {
+                return $value;
+            }
+            return url('/api/storage/' . $value);
+        }
+        return $value;
     }
 }
