@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('icon_url')->nullable(); // アイコンつけといた
             $table->timestamp('email_verified_at')->nullable();
             $table->string('icon_url');
             $table->string('password');

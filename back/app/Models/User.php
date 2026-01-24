@@ -48,19 +48,18 @@ class User extends Authenticatable
         ];
     }
 
-    public function newspaper(){
+    public function newspapers(){
         return $this->hasMany(Newspaper::class);
     }
 
-    public function comment(){
+    public function comments(){
         return $this->hasMany(Comment::class);
     }
 
-    public function like(){
+    public function likes(){
         return $this->hasMany(Like::class);
     }
 
-    // アイコンのurlを取得
     public function getIconUrlAttribute($value): ?string
     {
         if ($value) {
@@ -70,7 +69,6 @@ class User extends Authenticatable
             if (preg_match('/^https?:\/\//', $value) || str_starts_with($value, '/api/storage/') || str_starts_with($value, 'api/storage/')) {
                 return $value;
             }
-            // 独自の/storage/{path}エンドポイントを使用
             return url('/api/storage/' . $value);
         }
         return $value;
