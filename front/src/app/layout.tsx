@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`antialiased pt-18 bg-[url('/img/bg.svg')] min-h-screen bg-center bg-no-repeat bg-cover`}
+        className={`antialiased pt-18 pb-26 bg-[url('/img/bg.svg')] min-h-screen bg-center bg-no-repeat bg-cover`}
       >
         {children}
         <BottomNav />
