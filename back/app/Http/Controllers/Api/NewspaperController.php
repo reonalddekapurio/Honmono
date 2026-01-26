@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,9 +10,39 @@ use App\Models\Comment;
 use App\Models\Image;
 use App\Models\Like;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class NewspaperController extends Controller
 {
+    public function index() {
+        $user = auth()->id();
+
+        $newspapers = Newspaper::with([
+            'user:id,name,icon_url', 
+            'images'
+            ])->withCount([
+                'likes as likes_count', 
+                'comments as comment_count'
+            ])->withExists([
+                'likes as is_liked' => function($query) use ($user) {
+                $query->where(
+                    'user_id', 
+                    $user
+                );
+            }])->latest()->get();
+        
+            // 0,1をbooleanに変換
+            $newspapers->transform(function ($item) {
+                $item->is_liked = (bool)$item->is_liked;
+                return $item;
+            });
+
+            return response()->json([
+                'status' => 'success',
+                'data' => $newspapers
+            ]);
+        }
+
     public function ranking() {
 
         $user = Auth::user();
