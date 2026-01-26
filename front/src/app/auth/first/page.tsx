@@ -15,7 +15,7 @@ export default function First() {
             <div className="flex flex-col gap-4">
             <AuthButton label="ログイン" link="/auth/login" />
             <p className="text-gray text-center text-xs">または</p>
-            <AuthButton label="新規登録" link="/register" />
+            <AuthButton label="新規登録" link="/auth/signup" />
             </div>
         </div>
     )
