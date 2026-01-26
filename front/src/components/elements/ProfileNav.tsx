@@ -58,7 +58,7 @@ export function ProfileNav() {
 
     return (
         <div className="w-full">
-            <div className="flex justify-center gap-[153px] w-full border-b border-gray pb-2">
+            <div className="flex justify-center gap-38.25 w-full border-b border-gray pb-2">
                 <button onClick={() => setActiveTab("menu")} className="bg-none border-none cursor-pointer">
                     <Menu size={20} className={activeTab === "menu" ? "text-red" : "text-gray"} />
                 </button>

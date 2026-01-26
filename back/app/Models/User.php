@@ -60,7 +60,6 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
-    // アイコンのurlを取得
     public function getIconUrlAttribute($value): ?string
     {
         if ($value) {
@@ -70,7 +69,6 @@ class User extends Authenticatable
             if (preg_match('/^https?:\/\//', $value) || str_starts_with($value, '/api/storage/') || str_starts_with($value, 'api/storage/')) {
                 return $value;
             }
-            // 独自の/storage/{path}エンドポイントを使用
             return url('/api/storage/' . $value);
         }
         return $value;
