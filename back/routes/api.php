@@ -12,7 +12,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/account', [AccountController::class, 'store']);
 Route::post('/account/login', [AccountController::class, 'login']);
-Route::patch('/account/me', [AccountController::class, 'updateMe']);
+Route::patch('/account/update-me', [AccountController::class, 'updateMe']);
 
 Route::prefix('news')->group(function() {
     Route::post('/{newspaper_id}/comments', [CommentController::class, 'store']);
