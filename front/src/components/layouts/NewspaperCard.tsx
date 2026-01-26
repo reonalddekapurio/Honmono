@@ -19,7 +19,7 @@ export function NewspaperCard({ newspaper, user }: NewspaperCardProps) {
         : newspaper.description;
 
     return (
-        <div className="relative flex flex-col align-start justify-center w-[353px] h-[333px] gap-4 bg-[url('/img/newspaper.svg')] bg-no-repeat bg-center bg-cover shadow-2xl p-4">
+        <div className="relative flex flex-col align-start justify-center w-88.25 h-83.25 gap-4 bg-[url('/img/news-paper/news-paper-type1.svg')] bg-no-repeat bg-center bg-cover shadow-2xl p-4">
             <div className="flex align-start justify-center w-full overflow-hidden">
                 <Image 
                 src={newspaper.images} 
@@ -29,11 +29,11 @@ export function NewspaperCard({ newspaper, user }: NewspaperCardProps) {
                 className="w-full h-full object-cover"
             />
             </div>
-            <div className="w-[300px]">
+            <div className="w-75">
                 <p className="text-black text-md font-bold">{displayTitle}</p>
                 <p className="text-gray text-sm font-md">{displayDescription}</p>
                 {isLongDescription && (
-                    <Link href={`/newspaper/${newspaper.id}`}>
+                    <Link href={`/news-paper/${newspaper.id}`}>
                         <button className="text-red text-sm font-bold mt-1 hover:underline">
                             もっとみる 
                         </button>

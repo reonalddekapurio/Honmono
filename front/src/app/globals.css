@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "yosugara";
+  src: url("/fonts/yosugaraver1_2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @theme inline {
   --color-foreground: var(--foreground);
@@ -11,6 +17,8 @@
   --color-black: #1a1c1e;
   --color-red: #D3141B;
   --color-gray: #858585;
+
+  --font-yosugara: "yosugara", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
