@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "yosugara";
+  src: url("/fonts/yosugaraver1_2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @theme inline {
-  --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --foreground: #171717;
+  --color-white: #fefefe;
+  --color-black: #1a1c1e;
+  --color-red: #D3141B;
+  --color-gray: #858585;
+
+  --font-yosugara: "yosugara", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +29,6 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
