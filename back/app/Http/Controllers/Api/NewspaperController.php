@@ -11,6 +11,8 @@ use App\Models\Image;
 use App\Models\Like;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+// 整形すると長くなるためリソースを使用
+use App\Http\Resources\NewspaperResource;
 
 class NewspaperController extends Controller
 {
@@ -42,6 +44,15 @@ class NewspaperController extends Controller
                 'data' => $newspapers
             ]);
         }
+
+    public function show($id) {
+        
+        $newspaper = Newspaper::with(['user', 'images', 'comments.user'])->withCount('likes')->findOrFail($id);
+        return response()->json([
+            'status' => 'success',
+            'data' => new NewspaperResource($newspaper),
+        ]);
+    }
 
     public function ranking() {
 
