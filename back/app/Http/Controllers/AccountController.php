@@ -96,6 +96,27 @@ class AccountController extends Controller
         }
     }
 
+    public function me(Request $request)
+    {
+        $user = $request->user();
+
+        if (!$user) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'User not found',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'user_id' => $user->id,
+                'email' => $user->email,
+                'name' => $user->name,
+                'icon_url' => $user->icon_url,
+            ],
+        ]);
+    }
     public function updateMe(Request $request)
     {
         try {
