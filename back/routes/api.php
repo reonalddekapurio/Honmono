@@ -16,6 +16,7 @@ Route::patch('/account/update-me', [AccountController::class, 'updateMe']);
 
 Route::prefix('news')->group(function() {
     Route::get('/', [NewspaperController::class, 'index']);
+    Route::get('/{id}', [NewspaperController::class, 'show']);
     Route::post('/{newspaper_id}/comments', [CommentController::class, 'store']);
     Route::get('/ranking', [NewspaperController::class, 'ranking']);
     Route::get('/topics', [NewspaperController::class, 'topics']);
