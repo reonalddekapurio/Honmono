@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import mockData from "@/mocks/newspapers.json";
 import pickupsMockData from "@/mocks/pickups.json";
-import { NewspaperCard } from "@/components/layouts/";
+import { NewspaperCard, PostButton } from "@/components/layouts/";
 
 export default function Home() {
   const genreNavItems = ["タイムライン", "ピックアップ"];
@@ -54,6 +54,7 @@ export default function Home() {
           ))}
         </div>
       )}
+      <PostButton />
     </main>
   );
 }
