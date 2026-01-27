@@ -1,6 +1,6 @@
 import Image from "next/image";
 import rankingsMockData from "@/mocks/rankings.json";
-import { NewspaperCard } from "@/components/layouts";
+import { NewspaperCard, PostButton } from "@/components/layouts";
 
 export default function Rankings() {
   return (
@@ -34,6 +34,7 @@ export default function Rankings() {
           )
         })}
       </div>
+      <PostButton />
     </main>
   )
 }
