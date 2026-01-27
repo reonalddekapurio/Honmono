@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "newspaper": {
+      "id": 101,
+      "title": "【特集】2026年注目のテクノロジートレンド",
+      "description": "AI、量子コンピューティング、メタバースなど、今年注目すべき技術革新をピックアップ。専門家による詳細な解説と今後の展望をお届けします。",
+      "images": "/img/dummy-img.svg",
+      "likes": 1523,
+      "is_liked": true
+    },
+    "user": {
+      "id": 11,
+      "name": "中村拓也",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 2,
+    "newspaper": {
+      "id": 102,
+      "title": "話題沸騰！今週のグルメランキング",
+      "description": "SNSで話題になった飲食店やスイーツを厳選してご紹介。実際に訪れたレビューと共に、注目のグルメ情報をお届けします。",
+      "images": "/img/dummy-img.svg",
+      "likes": 892,
+      "is_liked": false
+    },
+    "user": {
+      "id": 12,
+      "name": "小林美穂",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 3,
+    "newspaper": {
+      "id": 103,
+      "title": "編集部おすすめ！春の新作ファッション特集",
+      "description": "2026年春夏の最新トレンドファッションをピックアップ。人気ブランドの新作アイテムから、プチプラコーデまで幅広くご紹介します。",
+      "images": "/img/dummy-img.svg",
+      "likes": 2147,
+      "is_liked": true
+    },
+    "user": {
+      "id": 13,
+      "name": "伊藤彩香",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 4,
+    "newspaper": {
+      "id": 104,
+      "title": "週末のお出かけに！人気観光スポット特集",
+      "description": "今週末におすすめの観光スポットを厳選。都心から気軽に行ける穴場スポットや、家族で楽しめる施設情報をまとめました。",
+      "images": "/img/dummy-img.svg",
+      "likes": 657,
+      "is_liked": false
+    },
+    "user": {
+      "id": 14,
+      "name": "渡辺誠",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 5,
+    "newspaper": {
+      "id": 105,
+      "title": "注目の新刊書籍レビュー",
+      "description": "今月発売された話題の書籍を編集部がピックアップ。ビジネス書から小説、実用書まで、幅広いジャンルの新刊をご紹介します。",
+      "images": "/img/dummy-img.svg",
+      "likes": 423,
+      "is_liked": true
+    },
+    "user": {
+      "id": 15,
+      "name": "松本由美",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 6,
+    "newspaper": {
+      "id": 106,
+      "title": "【独占取材】人気クリエイターインタビュー",
+      "description": "SNSフォロワー100万人超えの人気クリエイターに独占インタビュー。創作の裏側や今後の活動について語っていただきました。",
+      "images": "/img/dummy-img.svg",
+      "likes": 3251,
+      "is_liked": true
+    },
+    "user": {
+      "id": 16,
+      "name": "加藤翔太",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  }
+]
