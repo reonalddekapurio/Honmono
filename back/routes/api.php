@@ -9,10 +9,12 @@ use App\Http\Controllers\Api\NewspaperController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
-
-Route::post('/account', [AccountController::class, 'store']);
-Route::post('/account/login', [AccountController::class, 'login']);
-Route::patch('/account/update-me', [AccountController::class, 'updateMe']);
+Route::prefix('account')->group(function(){
+    Route::post('/', [AccountController::class, 'store']);
+    Route::get('/me', [AccountController::class, 'me']);
+    Route::post('/login', [AccountController::class, 'login']);
+    Route::patch('/update-me', [AccountController::class, 'updateMe']);
+});
 
 Route::prefix('news')->group(function() {
     Route::get('/', [NewspaperController::class, 'index']);
