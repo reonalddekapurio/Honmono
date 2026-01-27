@@ -46,7 +46,6 @@ class NewspaperController extends Controller
         }
 
     public function show($id) {
-        
         $newspaper = Newspaper::with(['user', 'images', 'comments.user'])->withCount('likes')->findOrFail($id);
         return response()->json([
             'status' => 'success',
