@@ -32,7 +32,7 @@ export default function Home() {
         ))}
       </div>
       {isTimeLine ? (
-        <div className="flex flex-col items-center gap-6 pb-20 px-4">
+        <div className="flex flex-col items-center gap-6 px-4">
           {/* TODO: 実際のデータを取得して表示 */}
           {mockData.map((data) => (
             <NewspaperCard 
@@ -43,7 +43,7 @@ export default function Home() {
           ))}
         </div>
       ): (
-        <div className="flex flex-col items-center gap-6 pb-20 px-4">
+        <div className="flex flex-col items-center gap-6 px-4">
           {/* TODO: 実際のデータを取得して表示 */}
           {pickupsMockData.map((data) => (
             <NewspaperCard 

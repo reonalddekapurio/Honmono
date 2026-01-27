@@ -13,7 +13,7 @@ export function BottomNav() {
                 <Link href="/" className={`flex items-center justify-center h-full w-1/3 ${pathname === '/' ? 'text-red' : 'text-gray'}`}>
                     <Home size={30} />
                 </Link>
-                <Link href="/rapidris" className={`flex items-center justify-center h-full w-1/3 ${pathname === '/rapidris' ? 'text-red' : 'text-gray'}`}>
+                <Link href="/rankings" className={`flex items-center justify-center h-full w-1/3 ${pathname === '/rapidris' ? 'text-red' : 'text-gray'}`}>
                     <ChartNoAxesCombined size={30} />
                 </Link>
                 <Link href="/profile" className={`flex items-center justify-center h-full w-1/3 ${pathname === '/profile' ? 'text-red' : 'text-gray'}`}>
