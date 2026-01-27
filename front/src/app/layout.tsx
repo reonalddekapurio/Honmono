@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`antialiased ${paddingClasses} bg-[url('/img/bg.svg')] min-h-screen bg-center bg-no-repeat bg-cover`}
+        className={`antialiased ${paddingClasses} bg-[url('/img/bg.svg')] bg-center bg-no-repeat bg-cover`}
       >
         {children}
         {showBottomNav && <BottomNav />}

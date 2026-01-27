@@ -1,31 +1,60 @@
-import { BottomNav } from "@/components/layouts/BottomNav";
-import { NewspaperCard } from "@/components/layouts/NewspaperCard";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import mockData from "@/mocks/newspapers.json";
+import pickupsMockData from "@/mocks/pickups.json";
+import { NewspaperCard, PostButton } from "@/components/layouts/";
 
 export default function Home() {
-  const mockData = [
-    {
-      id: 1,
-      newspaper: {
-        id: 1,
-        title: "コメダ新作？コラボを公開！",
-        description: "コメダ珈琲店は1月21日、公式X（Twitter）に新コラボの“ヒント”を公開。「食べられるコラボ？」「どんな展開になるんだろう」などのコメントが寄せられています。",
-        images: "/img/dummy-img.svg",
-        likes: 100,
-        is_liked: false
-      },
-      user: {
-        id: 1,
-        name: "山田太郎",
-        icon_url: "/img/dummy-img.svg"
-      }
-    }
-  ];
+  const genreNavItems = ["タイムライン", "ピックアップ"];
+  const [isTimeLine, setIsTimeLine] = useState(true); // 初期状態: タイムラインを表示
 
   return (
-    <div className="flex flex-col items-center pb-20">
-      {mockData.map((data) => (
-        <NewspaperCard key={data.id} newspaper={data.newspaper} user={data.user} />
-      ))}
-    </div>
+    <main className="mx-5">
+      <div className="flex justify-between w-full mb-6">
+        {genreNavItems.map((item, i) => (
+          <button
+            key={i}
+            onClick={() => setIsTimeLine(!isTimeLine)}
+            className="relative flex flex-col justify-end pb-1 w-36 h-14.5 text-1xl text-white font-yosugara"
+          >
+            <Image 
+              src="/img/tag/tag-wood.png"
+              alt={`${item}`}
+              fill
+              className="absolute object-cover"
+            />
+            <span className="relative z-10">
+              {item}
+            </span>
+          </button>
+        ))}
+      </div>
+      {isTimeLine ? (
+        <div className="flex flex-col items-center gap-6 px-4">
+          {/* TODO: 実際のデータを取得して表示 */}
+          {mockData.map((data) => (
+            <NewspaperCard 
+              key={data.id} 
+              newspaper={data.newspaper} 
+              user={data.user} 
+            />
+          ))}
+        </div>
+      ): (
+        <div className="flex flex-col items-center gap-6 px-4">
+          {/* TODO: 実際のデータを取得して表示 */}
+          {pickupsMockData.map((data) => (
+            <NewspaperCard 
+              key={data.id}
+              newspaper={data.newspaper}
+              user={data.user}
+            />
+          ))}
+        </div>
+      )}
+      <PostButton />
+    </main>
   );
 }
