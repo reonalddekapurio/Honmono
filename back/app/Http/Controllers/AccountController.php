@@ -158,6 +158,7 @@ class AccountController extends Controller
                 'status' => 'error',
                 'message' => $e->errors(),
             ], 422);
+            
         } catch (\Throwable $e) {
             return response()->json([
                 'status' => 'error',

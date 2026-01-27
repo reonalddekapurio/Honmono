@@ -43,6 +43,38 @@ class NewspaperController extends Controller
             ]);
         }
 
+    public function create(Request $request) {
+        try{
+            $title = $request['title'];
+            $description = $request['description'];
+
+            $user = $request->user();
+
+            $newspapers = $user->newspapers()->create([
+                'title' => $title,
+                'description' => $description,
+            ]);
+
+            $images = $request->input('images', []);
+            foreach($images as $url) {
+                $newspapers->images()->create([
+                    'url' => $url,
+                ]);
+            }
+            
+            return response()->json([
+                "status" => "success",
+                "data" => $newspapers->load('images')
+            ], 201);
+            
+        } catch (\Throwable $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Internal server error',
+            ], 500);
+        }
+    }
+
     public function ranking() {
 
         $user = Auth::user();
