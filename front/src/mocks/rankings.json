@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "newspaper": {
+      "id": 201,
+      "title": "SNSで話題沸騰！新感覚スイーツ登場",
+      "description": "発売直後からSNSで爆発的に拡散された新作スイーツ。行列必至の人気ぶりで、各メディアでも取り上げられています。",
+      "images": "/img/dummy-img.svg",
+      "likes": 3120,
+      "is_liked": true
+    },
+    "user": {
+      "id": 21,
+      "name": "石田遥",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 2,
+    "newspaper": {
+      "id": 202,
+      "title": "急上昇！話題の新作映画レビュー",
+      "description": "公開直後から口コミで人気が急上昇している新作映画。感動のストーリーと圧巻の映像美が高評価を集めています。",
+      "images": "/img/dummy-img.svg",
+      "likes": 2895,
+      "is_liked": false
+    },
+    "user": {
+      "id": 22,
+      "name": "村上大輔",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 3,
+    "newspaper": {
+      "id": 203,
+      "title": "新星アーティスト、音楽チャート急浮上",
+      "description": "デビュー間もないアーティストが音楽チャートで急上昇。独自のサウンドと世界観が若者を中心に支持を集めています。",
+      "images": "/img/dummy-img.svg",
+      "likes": 2541,
+      "is_liked": true
+    },
+    "user": {
+      "id": 23,
+      "name": "山口葵",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 4,
+    "newspaper": {
+      "id": 204,
+      "title": "急上昇中！最新ガジェット特集",
+      "description": "発売直後から売り切れ続出の最新ガジェット。便利な機能とスタイリッシュなデザインが人気の理由です。",
+      "images": "/img/dummy-img.svg",
+      "likes": 1987,
+      "is_liked": false
+    },
+    "user": {
+      "id": 24,
+      "name": "佐々木健",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  },
+  {
+    "id": 5,
+    "newspaper": {
+      "id": 205,
+      "title": "注目度急上昇！話題のスポット",
+      "description": "最近SNSで急速に注目を集めている観光スポット。写真映えする景色やユニークな体験が人気の理由です。",
+      "images": "/img/dummy-img.svg",
+      "likes": 1764,
+      "is_liked": true
+    },
+    "user": {
+      "id": 25,
+      "name": "藤本優",
+      "icon_url": "/img/dummy-img.svg"
+    }
+  }
+]

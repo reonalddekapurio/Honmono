@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Newspaper,User} from "../../types/newspaper"; 
+import { Newspaper, User } from "@/types/newspaper";
+import { ChevronRight } from "lucide-react";
 
 interface NewspaperCardProps {
     newspaper: Newspaper;
@@ -33,10 +34,17 @@ export function NewspaperCard({ newspaper, user }: NewspaperCardProps) {
                 <p className="text-black text-md font-bold">{displayTitle}</p>
                 <p className="text-gray text-sm font-md">{displayDescription}</p>
                 {isLongDescription && (
-                    <Link href={`/news-paper/${newspaper.id}`}>
+                    <Link 
+                        href={`/news-paper/${newspaper.id}`}
+                        className="flex items-center"
+                    >
                         <button className="text-red text-sm font-bold mt-1 hover:underline">
                             もっとみる 
                         </button>
+                        <ChevronRight 
+                            size={20}
+                            color="#D3141B"
+                        />
                     </Link>
                 )}
             </div>
